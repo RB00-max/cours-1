@@ -1,0 +1,335 @@
+/* ===== Style enfantin : accueil + tableau périodique ===== */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap");
+
+:root {
+  --texte: #3b2f63;
+  --rose: #ff5fa2;
+  --violet: #6c5ce7;
+  --ak: #ff8fa3;
+  --ae: #ffb86b;
+  --tm: #ffe066;
+  --pm: #8ce99a;
+  --md: #63e6be;
+  --nm: #74c0fc;
+  --ha: #b197fc;
+  --ng: #f783c4;
+  --la: #66d9e8;
+  --ac: #ced4da;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Fredoka", "Comic Sans MS", system-ui, sans-serif;
+  color: var(--texte);
+  background: linear-gradient(160deg, #bfe9ff 0%, #ffe3f1 50%, #fff3b0 100%) fixed;
+  min-height: 100vh;
+}
+
+/* ----- Menu de navigation ----- */
+.nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; padding: 16px 16px 0; }
+.nav a {
+  text-decoration: none;
+  padding: 9px 20px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--violet);
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.12);
+  transition: transform 0.15s;
+}
+.nav a:hover { transform: translateY(-3px) rotate(-2deg); }
+.nav a.actif { background: var(--rose); color: #fff; }
+
+/* ----- En-tête ----- */
+header { text-align: center; padding: 22px 16px 8px; }
+
+h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--rose);
+  text-shadow: 3px 3px 0 #ffe066, 6px 6px 0 rgba(0, 0, 0, 0.08);
+}
+header p { margin: 0 auto; max-width: 640px; font-size: 1.15rem; font-weight: 600; color: var(--violet); line-height: 1.5; }
+
+/* ----- Boutons ----- */
+.btn {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--rose);
+  border: 4px solid #fff;
+  border-radius: 999px;
+  padding: 12px 28px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 6px 0 #d63a82;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+.btn:hover { transform: translateY(-3px) scale(1.04); }
+.btn:active { transform: translateY(4px); box-shadow: 0 2px 0 #d63a82; }
+.btn.vert { background: #37c978; box-shadow: 0 6px 0 #229a58; }
+.btn.vert:active { box-shadow: 0 2px 0 #229a58; }
+
+/* ====================== PAGE D'ACCUEIL ====================== */
+.hero { text-align: center; padding: 10px 16px 20px; }
+.hero .boutons { margin-top: 24px; display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+
+.bulles { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin: 22px 0 6px; }
+.bulles span {
+  display: grid;
+  place-items: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  font-size: 1.7rem;
+  font-weight: 700;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.15);
+  animation: rebond 1.8s ease-in-out infinite;
+}
+@keyframes rebond {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+.section { max-width: 1000px; margin: 34px auto; padding: 0 16px; }
+.section > h2 {
+  text-align: center;
+  margin: 0 0 18px;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  color: var(--rose);
+  text-shadow: 2px 2px 0 #ffe066;
+}
+
+.bloc {
+  background: #fff;
+  border: 5px solid #ff9ecb;
+  border-radius: 28px;
+  padding: 22px 24px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.1);
+}
+.bloc.bleu  { border-color: #74c0fc; }
+.bloc.jaune { border-color: #ffd43b; }
+.bloc.vert  { border-color: #8ce99a; }
+.bloc h3 { margin: 0 0 6px; color: var(--violet); font-size: 1.3rem; }
+.bloc p { margin: 0 0 8px; }
+.bloc p:last-child { margin-bottom: 0; }
+
+.deux-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+
+.lecture { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; justify-content: center; }
+.lecture ul { margin: 0; padding-left: 20px; flex: 1 1 280px; }
+.lecture li { margin-bottom: 8px; }
+
+.chiffres { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
+.chiffre {
+  background: #fff;
+  border-radius: 24px;
+  padding: 14px 24px;
+  min-width: 160px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1);
+}
+.chiffre b { display: block; font-size: 2.6rem; color: var(--rose); line-height: 1.1; }
+
+.cartes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.carte {
+  border-radius: 22px;
+  border: 4px solid #fff;
+  padding: 16px;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.12);
+  line-height: 1.45;
+}
+.carte .emoji { font-size: 2.2rem; display: block; }
+.carte h3 { margin: 4px 0 6px; font-size: 1.15rem; }
+.carte p { margin: 0; font-size: 0.98rem; }
+
+.appel { text-align: center; padding: 10px 16px 30px; }
+.appel p { font-size: 1.3rem; font-weight: 600; color: var(--violet); }
+
+/* ====================== TABLEAU PÉRIODIQUE ====================== */
+.barre { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 14px; padding: 18px 16px; }
+
+#recherche {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: 4px dashed #ff9ecb;
+  background: #fff;
+  color: var(--texte);
+  font-family: inherit;
+  font-size: 1.1rem;
+  outline: none;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+#recherche:focus { border-color: var(--violet); border-style: solid; }
+
+.conteneur { overflow-x: auto; padding: 8px 16px 16px; }
+
+#tableau {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  gap: 6px;
+  min-width: 960px;
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+.case {
+  border-radius: 14px;
+  border: 3px solid #fff;
+  padding: 4px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--texte);
+  min-height: 68px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.case:hover { transform: scale(1.25) rotate(-4deg); z-index: 5; box-shadow: 0 8px 0 rgba(0, 0, 0, 0.2); }
+.case:active { transform: scale(1.05); }
+
+.case .num { font-size: 0.7rem; font-weight: 600; text-align: left; padding-left: 3px; }
+.case .sym { font-size: 1.35rem; font-weight: 700; line-height: 1.1; }
+.case .nom { font-size: 0.58rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.vide {
+  background: rgba(255, 255, 255, 0.5);
+  border: 3px dashed #b197fc;
+  color: #7b6bb5;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: default;
+  box-shadow: none;
+}
+.vide:hover { transform: none; box-shadow: none; }
+
+/* exemple de case sur la page d'accueil */
+.exemple { width: 140px; min-height: 150px; cursor: default; }
+.exemple:hover { transform: none; box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15); }
+.exemple .num { font-size: 1rem; }
+.exemple .sym { font-size: 3.2rem; }
+.exemple .nom { font-size: 0.95rem; }
+
+.attenue { opacity: 0.2; }
+
+/* Couleurs des familles */
+.ak { background: var(--ak); }
+.ae { background: var(--ae); }
+.tm { background: var(--tm); }
+.pm { background: var(--pm); }
+.md { background: var(--md); }
+.nm { background: var(--nm); }
+.ha { background: var(--ha); }
+.ng { background: var(--ng); }
+.la { background: var(--la); }
+.ac { background: var(--ac); }
+
+/* ----- Légende cliquable ----- */
+.legende { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 8px 16px 10px; }
+.puce {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: var(--texte);
+  padding: 7px 14px;
+  border: 3px solid #fff;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+  transition: transform 0.12s;
+}
+.puce:hover { transform: translateY(-2px); }
+.puce.actif { border-color: var(--violet); transform: scale(1.06); }
+.petit { text-align: center; color: var(--violet); font-weight: 600; padding: 0 16px 28px; }
+
+/* ----- Fiche détaillée (fenêtre pop-up) ----- */
+#fond {
+  position: fixed;
+  inset: 0;
+  background: rgba(108, 92, 231, 0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 10;
+}
+#fond.ouvert { display: flex; }
+
+#fiche {
+  background: #fffdf5;
+  border: 6px solid #ff9ecb;
+  border-radius: 28px;
+  padding: 26px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 92vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 0 rgba(0, 0, 0, 0.15);
+  animation: pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes pop {
+  from { transform: scale(0.4) rotate(-8deg); opacity: 0; }
+  to   { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+#fiche .grand {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  border-radius: 24px;
+  border: 4px solid #fff;
+  text-align: center;
+  color: var(--texte);
+  padding-top: 10px;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.15);
+  animation: rebond 1.6s ease-in-out infinite;
+}
+#fiche .grand .sym { font-size: 3rem; font-weight: 700; }
+#fiche .grand .num { font-size: 1rem; font-weight: 600; }
+
+#fiche h2 { margin: 14px 0 6px; font-size: 1.8rem; color: var(--rose); }
+#fiche p { font-size: 1.1rem; line-height: 1.5; margin: 0 0 8px; }
+
+#fiche table { width: 100%; border-collapse: collapse; margin: 12px 0 0; }
+#fiche td { padding: 8px 4px; border-bottom: 3px dotted #ffd6ea; font-weight: 600; }
+#fiche td:first-child { color: var(--violet); width: 50%; }
+
+#fermer {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  background: #ff6b6b;
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+#fermer:hover { transform: rotate(90deg) scale(1.1); }
+
+/* ----- Pied de page ----- */
+footer { text-align: center; color: var(--violet); font-size: 0.95rem; font-weight: 600; padding: 16px 16px 32px; }
