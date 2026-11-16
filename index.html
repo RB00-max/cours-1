@@ -225,6 +225,7 @@ function etat(z, sym) {
   return "Solide";
 }
 
+<!--configure le tableau avec les éléments, les groupes-->
 /* ---------- Construction du tableau ---------- */
 const tableau = document.getElementById("tableau");
 const cases = [];
@@ -263,7 +264,7 @@ E.forEach(el => {
   tableau.appendChild(d);
   cases.push({ el, d });
 });
-
+<!--configure ce qui est cliquable-->
 /* ---------- Légende cliquable + recherche ---------- */
 let filtreCat = null;
 let recherche = "";
