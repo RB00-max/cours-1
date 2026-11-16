@@ -1,3 +1,4 @@
+<!-- -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,7 +8,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<!-- configure les cases du site, où on pourra cliquer pour décrouvrir plus-->
 <header class="entete">
   <span class="etiquette">Chimie · Classification périodique</span>
   <h1>Tableau périodique des éléments</h1>
@@ -35,7 +36,7 @@
 </div>
 
 <footer>Masses atomiques arrondies · pour les éléments radioactifs, masse de l'isotope le plus stable · Échap pour fermer une fiche</footer>
-
+<!-- définit des catégories d'éléments-->
 <script>
 // Catégories : code -> libellé
 const CATEGORIES = {
@@ -43,7 +44,7 @@ const CATEGORIES = {
   pm: "Métal pauvre", md: "Métalloïde", nm: "Non-métal", ha: "Halogène",
   ng: "Gaz noble", la: "Lanthanide", ac: "Actinide"
 };
-
+<!--réglage de base de la page, remplissage tableau périodique, avec tous les éléments-->
 // [numéro, symbole, nom, masse, catégorie, période, groupe, description]
 const E = [
 [1,"H","Hydrogène",1.008,"nm",1,1,"L'élément le plus léger et le plus abondant de l'Univers. Il alimente les étoiles par fusion nucléaire et sert de carburant propre (pile à combustible)."],
@@ -166,6 +167,8 @@ const E = [
 [118,"Og","Oganesson",294,"ng",7,18,"Le plus lourd élément connu, nommé en l'honneur du physicien Iouri Oganessian."]
 ];
 
+<!--définit les sous couches-->
+
 /* ---------- Configuration électronique ---------- */
 // Ordre de remplissage des sous-couches (règle de Klechkowski / Madelung)
 const ORDRE = [["1s",2],["2s",2],["2p",6],["3s",2],["3p",6],["4s",2],["3d",10],["4p",6],["5s",2],["4d",10],["5p",6],["6s",2],["4f",14],["5d",10],["6p",6],["7s",2],["5f",14],["6d",10],["7p",6]];
@@ -179,7 +182,7 @@ const EXC = {
   Ac:"[Rn] 6d1 7s2", Th:"[Rn] 6d2 7s2", Pa:"[Rn] 5f2 6d1 7s2", U:"[Rn] 5f3 6d1 7s2",
   Np:"[Rn] 5f4 6d1 7s2", Cm:"[Rn] 5f7 6d1 7s2", Lr:"[Rn] 5f14 7s2 7p1"
 };
-
+<!--code le tableau-->
 function remplir(z) {
   let reste = z;
   const res = [];
@@ -294,6 +297,7 @@ document.getElementById("recherche").addEventListener("input", e => {
   appliquer();
 });
 
+<!--détaille toutes les cases-->
 /* ---------- Fiche détaillée ---------- */
 const fond = document.getElementById("fond");
 

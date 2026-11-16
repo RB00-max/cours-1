@@ -1,6 +1,6 @@
 /* ===== Style enfantin : accueil + tableau périodique ===== */
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap");
-
+/* définit les couleurs, la taille des cases, dans le style demandé*/
 :root {
   --texte: #3b2f63;
   --rose: #ff5fa2;
@@ -26,7 +26,7 @@ body {
   background: linear-gradient(160deg, #bfe9ff 0%, #ffe3f1 50%, #fff3b0 100%) fixed;
   min-height: 100vh;
 }
-
+/* configure style du menu*/
 /* ----- Menu de navigation ----- */
 .nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; padding: 16px 16px 0; }
 .nav a {
@@ -55,7 +55,7 @@ h1 {
   text-shadow: 3px 3px 0 #ffe066, 6px 6px 0 rgba(0, 0, 0, 0.08);
 }
 header p { margin: 0 auto; max-width: 640px; font-size: 1.15rem; font-weight: 600; color: var(--violet); line-height: 1.5; }
-
+/*configure les boutons où on peut cliquer pour découvrir plus*/
 /* ----- Boutons ----- */
 .btn {
   display: inline-block;
@@ -76,7 +76,7 @@ header p { margin: 0 auto; max-width: 640px; font-size: 1.15rem; font-weight: 60
 .btn:active { transform: translateY(4px); box-shadow: 0 2px 0 #d63a82; }
 .btn.vert { background: #37c978; box-shadow: 0 6px 0 #229a58; }
 .btn.vert:active { box-shadow: 0 2px 0 #229a58; }
-
+/* configure les éléments stylistiques de la page d'accueil*/
 /* ====================== PAGE D'ACCUEIL ====================== */
 .hero { text-align: center; padding: 10px 16px 20px; }
 .hero .boutons { margin-top: 24px; display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
@@ -156,7 +156,7 @@ header p { margin: 0 auto; max-width: 640px; font-size: 1.15rem; font-weight: 60
 
 .appel { text-align: center; padding: 10px 16px 30px; }
 .appel p { font-size: 1.3rem; font-weight: 600; color: var(--violet); }
-
+/*éléments de style du tableau périodique*/
 /* ====================== TABLEAU PÉRIODIQUE ====================== */
 .barre { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 14px; padding: 18px 16px; }
 
@@ -238,7 +238,7 @@ header p { margin: 0 auto; max-width: 640px; font-size: 1.15rem; font-weight: 60
 .ng { background: var(--ng); }
 .la { background: var(--la); }
 .ac { background: var(--ac); }
-
+/*style des endroits où on peut cliquer*/
 /* ----- Légende cliquable ----- */
 .legende { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 8px 16px 10px; }
 .puce {
@@ -260,7 +260,7 @@ header p { margin: 0 auto; max-width: 640px; font-size: 1.15rem; font-weight: 60
 .puce:hover { transform: translateY(-2px); }
 .puce.actif { border-color: var(--violet); transform: scale(1.06); }
 .petit { text-align: center; color: var(--violet); font-weight: 600; padding: 0 16px 28px; }
-
+/*style des fenêtres qui s'ouvrent quand on appuie sur une case*/
 /* ----- Fiche détaillée (fenêtre pop-up) ----- */
 #fond {
   position: fixed;
@@ -330,6 +330,6 @@ header p { margin: 0 auto; max-width: 640px; font-size: 1.15rem; font-weight: 60
   box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
 }
 #fermer:hover { transform: rotate(90deg) scale(1.1); }
-
+/*définit style du pied de page*/
 /* ----- Pied de page ----- */
 footer { text-align: center; color: var(--violet); font-size: 0.95rem; font-weight: 600; padding: 16px 16px 32px; }
